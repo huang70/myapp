@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-// import CInput from ''
 import { ref } from "vue";
 const input = ref("");
 </script>
