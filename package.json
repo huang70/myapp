@@ -18,7 +18,6 @@
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.15",
-    "@vue/cli-plugin-eslint": "~4.5.15",
     "@vue/cli-plugin-router": "~4.5.15",
     "@vue/cli-plugin-typescript": "~4.5.15",
     "@vue/cli-plugin-vuex": "~4.5.15",
@@ -26,9 +25,9 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^6.7.2",
+    "eslint": "^8.10.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.0.0",
+    "eslint-plugin-vue": "^8.5.0",
     "prettier": "^2.2.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
@@ -38,15 +37,23 @@
   },
   "eslintConfig": {
     "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
     "env": {
-      "node": true
+      "node": true,
+      "vue/setup-compiler-macros": true
     },
     "extends": [
       "plugin:vue/vue3-essential",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
       "eslint:recommended",
       "@vue/typescript/recommended",
       "@vue/prettier",
-      "@vue/prettier/@typescript-eslint"
+      "@vue/prettier/@typescript-eslint",
+      "prettier"
     ],
     "parserOptions": {
       "ecmaVersion": 2020
